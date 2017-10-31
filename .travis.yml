@@ -1,0 +1,25 @@
+dist: xenial
+install:
+# Create directories ...
+- mkdir -p $HOME/.local/bin
+- mkdir -p $HOME/go/src
+# Set environment variables ...
+- export GOPATH=$HOME/go
+- export GOROOT=/usr/local/go
+- export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/.local/bin
+# Install Go ...
+- rm -r /home/travis/.gimme/versions/go1.7.4.linux.amd64
+- wget -q https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
+- tar xf go1.8.linux-amd64.tar.gz
+- sudo mv go /usr/local
+# Install Go libraries ...
+- wget -q https://s3-us-west-2.amazonaws.com/gx-deps/gx.zip
+- unzip -q gx.zip -d $GOPATH/src
+- go get github.com/enzoh/go-logging
+- go get github.com/hashicorp/golang-lru
+# Install Haskell ...
+- wget -q -O - https://get.haskellstack.org | sh
+- stack --resolver nightly-2017-10-31 setup
+script:
+- make
+- stack build

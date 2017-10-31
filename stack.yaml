@@ -1,0 +1,7 @@
+resolver: nightly-2017-10-31
+packages:
+- .
+extra-include-dirs:
+- include
+extra-lib-dirs:
+- lib
