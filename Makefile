@@ -12,16 +12,6 @@ LDFLAGS = -L$(PWD)/lib -lpreambles
 
 PREFIX  = /usr/local
 
-.PHONY: install
-install: $(LIB_DIR)/librevolver.a
-	cp include/hs-revolver.h $(PREFIX)/include
-	cp $(LIB_DIR)/librevolver.a $(PREFIX)/lib
-
-.PHONY: uninstall
-uninstall:
-	rm -f $(PREFIX)/include/hs-revolver.h
-	rm -f $(PREFIX)/lib/librevolver.a
-
 .PHONY: all
 all: $(LIB_DIR)/librevolver.a
 
@@ -44,3 +34,13 @@ $(OBJ_DIR):
 clean:
 	rm -rf $(LIB_DIR)
 	rm -rf $(OBJ_DIR)
+
+.PHONY: install
+install: $(LIB_DIR)/librevolver.a
+	cp include/hs-revolver.h $(PREFIX)/include
+	cp $(LIB_DIR)/librevolver.a $(PREFIX)/lib
+
+.PHONY: uninstall
+uninstall:
+	rm -f $(PREFIX)/include/hs-revolver.h
+	rm -f $(PREFIX)/lib/librevolver.a
