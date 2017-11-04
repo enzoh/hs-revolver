@@ -10,6 +10,18 @@ OBJ_DIR = obj
 CFLAGS  = -I$(PWD)/include
 LDFLAGS = -L$(PWD)/lib -lpreambles
 
+PREFIX  = /usr/local
+
+.PHONY: install
+install: $(LIB_DIR)/librevolver.a
+	cp include/hs-revolver.h $(PREFIX)/include
+	cp $(LIB_DIR)/librevolver.a $(PREFIX)/lib
+
+.PHONY: uninstall
+uninstall:
+	rm -f $(PREFIX)/include/hs-revolver.h
+	rm -f $(PREFIX)/lib/librevolver.a
+
 all: $(LIB_DIR)/librevolver.a
 
 $(LIB_DIR)/librevolver.a: gbits/hs-revolver.go | $(LIB_DIR)/libpreambles.a
