@@ -22,6 +22,7 @@ uninstall:
 	rm -f $(PREFIX)/include/hs-revolver.h
 	rm -f $(PREFIX)/lib/librevolver.a
 
+.PHONY: all
 all: $(LIB_DIR)/librevolver.a
 
 $(LIB_DIR)/librevolver.a: gbits/hs-revolver.go | $(LIB_DIR)/libpreambles.a
@@ -39,6 +40,7 @@ $(OBJ_DIR)/hs-revolver.o: cbits/hs-revolver.c | $(OBJ_DIR)
 $(OBJ_DIR):
 	mkdir -p $@
 
+.PHONY: clean
 clean:
 	rm -rf $(LIB_DIR)
 	rm -rf $(OBJ_DIR)
