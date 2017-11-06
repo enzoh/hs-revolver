@@ -16,7 +16,7 @@ PREFIX  = /usr/local
 all: $(LIB_DIR)/librevolver.a
 
 $(LIB_DIR)/librevolver.a: gbits/hs-revolver.go | $(LIB_DIR)/libpreambles.a
-	CGO_CFLAGS='$(CFLAGS)' CGO_LDFLAGS='$(LDFLAGS)' go build -buildmode c-archive -o $@ -race $<
+	CGO_CFLAGS='$(CFLAGS)' CGO_LDFLAGS='$(LDFLAGS)' go build -buildmode c-archive -o $@ $<
 
 $(LIB_DIR)/libpreambles.a: $(OBJ_DIR)/hs-revolver.o | $(LIB_DIR)
 	ar cr $@ $<
