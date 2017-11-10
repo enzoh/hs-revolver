@@ -2,7 +2,11 @@ name:          revolver
 version:       0.1.0
 synopsis:      A decentralized peer-to-peer broadcast network.
 license:       GPL-3
-copyright:     2017 DFINITY Stiftung.
+license-file:  LICENSE
+copyright:     2017 DFINITY Stiftung
+author:        Enzo Haussecker <enzo@dfinity.org>
+maintainer:    Enzo Haussecker <enzo@dfinity.org>
+stability:     Experimental
 category:      Network
 homepage:      https://github.com/dfinity/hs-revolver
 bug-reports:   https://github.com/dfinity/hs-revolver/issues
