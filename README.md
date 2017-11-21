@@ -14,6 +14,13 @@ stack install
 
 Feel free to join in. All are welcome. Open an [issue](https://github.com/dfinity/hs-revolver/issues)!
 
+## Usage / Examples
+TBD
+
 ## License
 
-GPLv3
+**(C) 2017 DFINITY STIFTUNG** (http://dfinity.network)
+
+All code and designs are open sourced under GPL V3.
+
+![image](https://user-images.githubusercontent.com/6457089/32753794-10f4cbc2-c883-11e7-8dcf-ff8088b38f9f.png)
